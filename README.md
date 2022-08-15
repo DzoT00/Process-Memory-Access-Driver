@@ -51,7 +51,7 @@ To issue read or write requests, you send the driver a control code:
 ```cpp
 IO_READ_REQUEST CTL_CODE(FILE_DEVICE_UNKNOWN,0x802,METHOD_BUFFERED,FILE_SPECIAL_ACCESS)
 ```
-Еhis is implemented through:
+This is implemented through:
 1. Obtaining handle of driver:
 ```cpp
 devicehandle = CreateFile(L"\\\\.\\ProcMemAccessDrv", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, OPEN_EXISTING, 0, 0);
