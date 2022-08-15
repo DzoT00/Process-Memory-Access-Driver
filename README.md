@@ -31,6 +31,7 @@ purposes you can enable [test-signing mode](https://docs.microsoft.com/en-us/win
 
 You will need to either install and run the driver as a service with `CreateService` or use a function like `NtLoadDriver`,
 but I use [OSRLOADER](https://www.osronline.com/article.cfm%5Earticle=157.htm)
+
 Once the driver is loaded, you can open a handle to the driver:
 
 ```cpp
