@@ -35,16 +35,13 @@ but I use [OSRLOADER](https://www.osronline.com/article.cfm%5Earticle=157.htm)
 Once the driver is loaded, you can open a handle to the driver:
 
 ```cpp
-#include "driver_config.h"
-#include "driver_codes.h"
-
-HANDLE driver = CreateFileW(
-    DRIVER_DEVICE_PATH, 
-    GENERIC_READ | GENERIC_WRITE, 
-    FILE_SHARE_READ | FILE_SHARE_WRITE, 
-    0, 
-    OPEN_EXISTING, 
-    0, 0);
+devicehandle = CreateFile(
+	L"\\\\.\\ProcMemAccessDrv",
+	GENERIC_READ | GENERIC_WRITE,
+	FILE_SHARE_READ | FILE_SHARE_WRITE,
+	0,
+	OPEN_EXISTING,
+	0, 0);
 ```
 
 To issue read or write requests, you send the driver a control code:
